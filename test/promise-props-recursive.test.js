@@ -64,6 +64,8 @@ describe('promise-props-recursive', function () {
   it('should handle nested objects with promises', function (done) {
     const input = {
       cow: 'moo',
+      nullish: null,
+      arrayish: ['a', 'b'],
       horse: resolveSound('horse'),
       birds: {
         tit: resolveSound('tit'),
@@ -75,6 +77,8 @@ describe('promise-props-recursive', function () {
       .then(function (res) {
         assert.deepEqual(res, {
           cow: 'moo',
+          nullish: null,
+          arrayish: ['a', 'b'],
           horse: 'neigh',
           birds: {
             tit: 'tweet',
